@@ -27,7 +27,7 @@ function Hero() {
         </p>
 
         <div className="hero-buttons">
-          <Link to="/#menu" className="primary-button">
+          <Link to="/menu" className="primary-button">
             Scopri il menu
           </Link>
 
