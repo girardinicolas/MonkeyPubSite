@@ -169,6 +169,14 @@ section {
     font-size: 0.64rem;
   }
 
+  .menu-cards {
+    gap: 14px;
+  }
+
+  .menu-card-content {
+    padding: 20px;
+  }
+
   .about-layout,
   .games-layout {
     gap: 45px;
@@ -181,25 +189,6 @@ section {
   .review-card {
     padding: 24px 21px;
   }
-
-  .competition-grid {
-    grid-template-columns: repeat(2, 1fr);
-  }
-
-  .competition-card {
-    min-height: 125px;
-  }
-
-  .competition-logo {
-    display: block;
-    width: 70px;
-    height: 60px;
-    max-width: 100%;
-    object-fit: contain;
-    object-position: center;
-    opacity: 1;
-    visibility: visible;
-  }
 }
 
 /* =========================
@@ -211,22 +200,219 @@ section {
     width: min(100% - 40px, 1055px);
   }
 
+  .header {
+    height: auto;
+  }
+
+  .header-container {
+    width: min(100% - 32px, 1440px);
+    min-height: 62px;
+    flex-wrap: wrap;
+    gap: 12px;
+    padding: 11px 0;
+  }
+
+  .logo-image {
+    width: 34px;
+    height: 34px;
+  }
+
+  .logo-text {
+    font-size: 1.2rem;
+  }
+
+  .call-button {
+    min-width: 96px;
+    padding: 10px 12px;
+    font-size: 0.66rem;
+  }
+
+  .navigation {
+    order: 3;
+    justify-content: flex-start;
+    width: 100%;
+    gap: 18px;
+    margin: 0;
+    padding: 7px 0 2px;
+    overflow-x: auto;
+  }
+
+  .navigation::-webkit-scrollbar {
+    display: none;
+  }
+
   section {
     scroll-margin-top: 103px;
   }
 
-  .section-title {
-    font-size: clamp(3.55rem, 16vw, 5.8rem);
+  .hero {
+    min-height: 760px;
   }
 
-  /* =========================
-     BOTTONI
-     ========================= */
+  .hero-content {
+    width: min(100% - 36px, 850px);
+    padding: 150px 0 45px;
+  }
+
+  .hero-logo {
+    width: 82px;
+    height: 82px;
+    margin-bottom: 24px;
+  }
+
+  .hero-location {
+    font-size: 0.6rem;
+    letter-spacing: 0.21em;
+  }
+
+  .hero-title {
+    font-size: clamp(4.6rem, 21vw, 7.4rem);
+  }
+
+  .hero-description {
+    margin-top: 28px;
+    font-size: 0.95rem;
+    line-height: 1.6;
+  }
+
+  .hero-buttons {
+    flex-direction: column;
+    align-items: center;
+    margin-top: 30px;
+  }
 
   .primary-button,
   .secondary-button,
   .outline-button {
     width: 100%;
     max-width: 285px;
+  }
+
+  .scroll-link {
+    margin-top: 30px;
+  }
+
+  .about-section,
+  .games-section {
+    min-height: auto;
+    padding: 80px 0;
+  }
+
+  .menu-section,
+  .sport-section,
+  .reviews-section {
+    padding: 75px 0;
+  }
+
+  .contact-section {
+    padding: 25px 0 75px;
+  }
+
+  .section-title {
+    font-size: clamp(3.55rem, 16vw, 5.8rem);
+  }
+
+  .about-layout,
+  .games-layout,
+  .contact-layout {
+    grid-template-columns: 1fr;
+  }
+
+  .about-layout,
+  .games-layout {
+    min-height: auto;
+    gap: 45px;
+  }
+
+  .about-text > p:not(.section-label),
+  .games-content > p:not(.section-label) {
+    font-size: 0.88rem;
+  }
+
+  .about-image {
+    height: 390px;
+  }
+
+  .rating-badge {
+    bottom: -14px;
+    left: -10px;
+    width: 160px;
+    min-height: 76px;
+  }
+
+  .menu-cards,
+  .reviews-grid {
+    grid-template-columns: 1fr;
+    margin-top: 42px;
+  }
+
+  .menu-card {
+    min-height: auto;
+  }
+
+  .menu-card-image {
+    height: 240px;
+  }
+
+  .games-image {
+    height: 400px;
+  }
+
+  .games-badge {
+    top: -12px;
+    right: -10px;
+    width: 88px;
+    min-height: 88px;
+  }
+
+  .competition-grid {
+    grid-template-columns: repeat(2, 1fr);
+    margin-top: 42px;
+  }
+
+  .competition-card {
+    min-height: 118px;
+  }
+
+  .reviews-header {
+    align-items: flex-start;
+    flex-direction: column;
+  }
+
+  .overall-rating {
+    padding: 0;
+  }
+
+  .reviews-grid {
+    margin-top: 38px;
+  }
+
+  .review-card {
+    min-height: 220px;
+  }
+
+  .contact-layout {
+    gap: 48px;
+    margin-top: 42px;
+  }
+
+  .footer {
+    padding: 28px 0;
+  }
+
+  .footer-container {
+    grid-template-columns: 1fr;
+    gap: 18px;
+    width: min(100% - 40px, 1150px);
+    text-align: center;
+  }
+
+  .footer-logo {
+    justify-content: center;
+  }
+
+  .footer-container > p:nth-child(2),
+  .footer-container > p:last-child {
+    text-align: center;
   }
 }
