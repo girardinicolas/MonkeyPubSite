@@ -12,12 +12,12 @@ const gameCategories: GameCategory[] = [
     icon: '🎲',
     title: 'Giochi da tavolo',
     games: [
-      'Catan',
+      'Monopoly',
       'Ticket to Ride',
       'Carcassonne',
       'Azul',
       'Dixit',
-      'Codenames',
+      'e tanto altro...'
     ],
   },
   {
@@ -27,9 +27,7 @@ const gameCategories: GameCategory[] = [
       'Magic: The Gathering',
       'Pokémon TCG',
       'Yu-Gi-Oh!',
-      'Uno',
-      'Exploding Kittens',
-      'Disney Lorcana',
+      'RiftBound'
     ],
   },
   {
