@@ -1,3 +1,4 @@
+import { useState } from 'react';
 import './Games.css';
 
 type GameCategory = {
@@ -11,12 +12,12 @@ const gameCategories: GameCategory[] = [
     icon: '🎲',
     title: 'Giochi da tavolo',
     games: [
-      'Monopoly',
+      'Catan',
       'Ticket to Ride',
-      'Cluedo',
-      'Scarabeo',
-      'Exploding Kittens',
-      'e tanto altro...'
+      'Carcassonne',
+      'Azul',
+      'Dixit',
+      'Codenames',
     ],
   },
   {
@@ -26,7 +27,9 @@ const gameCategories: GameCategory[] = [
       'Magic: The Gathering',
       'Pokémon TCG',
       'Yu-Gi-Oh!',
-      'Riftbound'
+      'Uno',
+      'Exploding Kittens',
+      'Disney Lorcana',
     ],
   },
   {
@@ -56,6 +59,14 @@ const gameCategories: GameCategory[] = [
 ];
 
 function Games() {
+  const [openCategory, setOpenCategory] = useState<string | null>(null);
+
+  function handleCategoryClick(categoryTitle: string) {
+    setOpenCategory((currentCategory) =>
+      currentCategory === categoryTitle ? null : categoryTitle,
+    );
+  }
+
   return (
     <section id="giochi" className="games-section">
       <div className="section-container games-layout">
@@ -81,7 +92,7 @@ function Games() {
         </div>
 
         <div className="games-content">
-          <p className="section-label">02 / GIOCHI</p>
+          <p className="section-label">03 / GIOCHI</p>
 
           <h2 className="section-title">
             GIOCA,
@@ -96,34 +107,47 @@ function Games() {
           </p>
 
           <div className="game-category-grid">
-            {gameCategories.map((category) => (
-              <article className="game-category-card" key={category.title}>
-                <div className="game-category-header">
-                  <span className="game-icon" aria-hidden="true">
-                    {category.icon}
-                  </span>
+            {gameCategories.map((category) => {
+              const isOpen = openCategory === category.title;
+              const listId = `game-list-${category.title
+                .toLowerCase()
+                .replaceAll(' ', '-')}`;
 
-                  <strong>{category.title}</strong>
-
-                  <span
-                    className="game-category-arrow"
-                    aria-hidden="true"
+              return (
+                <article
+                  className={`game-category-card ${isOpen ? 'is-open' : ''}`}
+                  key={category.title}
+                >
+                  <button
+                    type="button"
+                    className="game-category-header"
+                    onClick={() => handleCategoryClick(category.title)}
+                    aria-expanded={isOpen}
+                    aria-controls={listId}
                   >
-                    ⌄
-                  </span>
-                </div>
+                    <span className="game-icon" aria-hidden="true">
+                      {category.icon}
+                    </span>
 
-                <div className="game-list-wrapper">
-                  <p className="game-list-label">ALCUNI TITOLI</p>
+                    <strong>{category.title}</strong>
 
-                  <ul className="game-list">
-                    {category.games.map((game) => (
-                      <li key={game}>{game}</li>
-                    ))}
-                  </ul>
-                </div>
-              </article>
-            ))}
+                    <span className="game-category-arrow" aria-hidden="true">
+                      ⌄
+                    </span>
+                  </button>
+
+                  <div id={listId} className="game-list-wrapper">
+                    <p className="game-list-label">ALCUNI TITOLI</p>
+
+                    <ul className="game-list">
+                      {category.games.map((game) => (
+                        <li key={game}>{game}</li>
+                      ))}
+                    </ul>
+                  </div>
+                </article>
+              );
+            })}
           </div>
         </div>
       </div>
