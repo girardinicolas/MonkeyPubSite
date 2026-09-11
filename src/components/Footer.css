@@ -1,0 +1,35 @@
+.footer {
+    padding: 34px 0;
+    border-top: 1px solid var(--border);
+    background: var(--background);
+  }
+  
+  .footer-container {
+    display: grid;
+    grid-template-columns: 1fr 1.5fr 1fr;
+    align-items: center;
+    width: min(100% - 48px, 1150px);
+    margin: 0 auto;
+    color: #666666;
+    font-size: 0.66rem;
+  }
+  
+  .footer-logo img {
+    width: 32px;
+    height: 32px;
+    object-fit: cover;
+    border-radius: 50%;
+    background: #ffffff;
+  }
+  
+  .footer-logo span {
+    font-size: 1.13rem;
+  }
+  
+  .footer-container > p:nth-child(2) {
+    text-align: center;
+  }
+  
+  .footer-container > p:last-child {
+    text-align: right;
+  }

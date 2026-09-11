@@ -1,3 +1,4 @@
+import './Contact.css'
 type OpeningHour = {
     day: string;
     hours: string;

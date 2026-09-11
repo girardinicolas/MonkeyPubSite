@@ -1,4 +1,4 @@
-
+import './Games.css';
 
 type GameCategory = {
   icon: string;

@@ -1,0 +1,72 @@
+.sport-section {
+    padding: 95px 0 110px;
+    background: var(--surface);
+  }
+  
+  .sport-content {
+    text-align: center;
+  }
+  
+  .sport-content .section-title {
+    align-items: center;
+  }
+  
+  .sport-description {
+    margin-top: 33px;
+    color: var(--text-muted);
+    font-size: 0.9rem;
+  }
+  
+  .competition-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    margin-top: 65px;
+    gap: 0;
+  }
+  
+  .competition-card {
+    position: relative;
+    z-index: 1;
+    display: flex;
+    min-height: 132px;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 7px;
+    padding: 15px;
+    border: 1px solid var(--border);
+    background-color: var(--surface);
+    transition:
+      border-color 0.2s ease,
+      background-color 0.2s ease,
+      transform 0.2s ease,
+      box-shadow 0.2s ease;
+  }
+  
+  .competition-card:hover {
+    z-index: 2;
+    border-color: var(--pink);
+    background-color: #272727;
+    box-shadow: 0 0 0 1px var(--pink);
+    transform: translateY(-3px);
+  }
+  
+  .competition-logo {
+    width: 74px;
+    height: 64px;
+    object-fit: contain;
+    filter: brightness(1.08);
+    transition: transform 0.2s ease, filter 0.2s ease;
+  }
+  
+  .competition-card:hover .competition-logo {
+    filter: brightness(1.25);
+    transform: scale(1.08);
+  }
+  
+  .competition-name {
+    font-family: 'Anton', Impact, sans-serif;
+    font-size: 0.85rem;
+    letter-spacing: 0.02em;
+  }
+  

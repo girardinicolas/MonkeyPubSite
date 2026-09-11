@@ -1,3 +1,5 @@
+import './Sport.css';
+
 type Competition = {
     logo: string;
     name: string;
