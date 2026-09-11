@@ -42,7 +42,7 @@ type Competition = {
     return (
       <section id="sport" className="sport-section">
         <div className="section-container sport-content">
-          <p className="section-label">04 / SPORT LIVE</p>
+          <p className="section-label">03 / SPORT LIVE</p>
   
           <h2 className="section-title sport-title">
             TUTTE LE PARTITE

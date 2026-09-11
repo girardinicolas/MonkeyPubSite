@@ -30,7 +30,7 @@ function Reviews() {
       <div className="section-container">
         <div className="reviews-header">
           <div>
-            <p className="section-label">05 / RECENSIONI</p>
+            <p className="section-label">04 / RECENSIONI</p>
 
             <h2 className="section-title">
               COSA DICONO

@@ -7,37 +7,37 @@ type OpeningHour = {
   const openingHours: OpeningHour[] = [
     {
       day: 'Lunedì',
-      hours: '18:00 – 00:30',
+      hours: '17:00 – 00:30',
       dayNumber: 1,
     },
     {
       day: 'Martedì',
-      hours: '18:00 – 00:30',
+      hours: '17:00 – 00:30',
       dayNumber: 2,
     },
     {
       day: 'Mercoledì',
-      hours: '18:00 – 00:30',
+      hours: '17:00 – 00:30',
       dayNumber: 3,
     },
     {
       day: 'Giovedì',
-      hours: '18:00 – 00:30',
+      hours: '17:00 – 00:30',
       dayNumber: 4,
     },
     {
       day: 'Venerdì',
-      hours: '18:00 – 01:00',
+      hours: '17:00 – 02:00',
       dayNumber: 5,
     },
     {
       day: 'Sabato',
-      hours: '18:00 – 01:00',
+      hours: '17:00 – 02:00',
       dayNumber: 6,
     },
     {
       day: 'Domenica',
-      hours: '18:00 – 00:30',
+      hours: '17:00 – 00:30',
       dayNumber: 0,
     },
   ];
@@ -48,7 +48,7 @@ type OpeningHour = {
     return (
       <section id="contatti" className="contact-section">
         <div className="section-container">
-          <p className="section-label">06 / CONTATTI</p>
+          <p className="section-label">05 / CONTATTI</p>
   
           <h2 className="section-title">
             VIENI A
@@ -74,13 +74,6 @@ type OpeningHour = {
               </div>
   
               <div className="social-links">
-                <a
-                  href="https://www.youtube.com"
-                  target="_blank"
-                  rel="noreferrer"
-                >
-                  YOUTUBE
-                </a>
   
                 <a
                   href="https://www.tiktok.com"

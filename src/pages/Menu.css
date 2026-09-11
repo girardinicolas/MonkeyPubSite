@@ -12,8 +12,8 @@
 }
 
 .menu-page-description {
-  margin-top: 22px;
   max-width: 520px;
+  margin-top: 22px;
   color: var(--text-muted);
   font-size: 0.92rem;
   line-height: 1.7;
@@ -48,8 +48,8 @@
 .menu-navigation a:hover,
 .menu-navigation a:focus-visible {
   border-color: rgba(232, 63, 168, 0.65);
-  color: var(--pink);
   background-color: #171717;
+  color: var(--pink);
 }
 
 .menu-navigation a:focus-visible {
@@ -115,6 +115,7 @@
 
 .menu-item-content {
   display: flex;
+  min-height: 230px;
   flex: 1;
   flex-direction: column;
   padding: 22px 24px 25px;
@@ -149,48 +150,84 @@
   line-height: 1.65;
 }
 
-.menu-item-ingredients {
-  margin-top: 20px;
+/* =========================
+   TENDINA INGREDIENTI
+   ========================= */
+
+.menu-item-details {
+  margin-top: auto;
+  padding-top: 21px;
+  border-top: 1px solid var(--border);
 }
 
-.menu-item-ingredients p {
+.menu-item-details summary {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
   color: var(--pink);
+  cursor: pointer;
   font-size: 0.68rem;
-  font-weight: 800;
-  letter-spacing: 0.18em;
+  font-weight: 900;
+  letter-spacing: 0.12em;
+  list-style: none;
+  user-select: none;
 }
 
-.menu-item-ingredients ul {
+.menu-item-details summary::-webkit-details-marker {
+  display: none;
+}
+
+.menu-item-details summary::after {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 20px;
+  height: 20px;
+  color: var(--text-main);
+  content: '⌄';
+  font-size: 1.55rem;
+  font-weight: 600;
+  line-height: 1;
+  transform: translateY(-2px);
+  transition:
+    color 0.2s ease,
+    transform 0.25s ease;
+}
+
+.menu-item-details:hover summary::after {
+  color: var(--pink);
+}
+
+.menu-item-details[open] summary::after {
+  transform: translateY(1px) rotate(180deg);
+}
+
+.menu-item-details summary:focus-visible {
+  outline: 2px solid var(--pink);
+  outline-offset: 5px;
+}
+
+.menu-item-ingredients-list {
   display: flex;
   flex-wrap: wrap;
   gap: 8px;
-  margin-top: 12px;
+  margin-top: 16px;
   list-style: none;
 }
 
-.menu-item-ingredients li {
-  padding: 7px 11px;
+.menu-item-ingredients-list li {
+  padding: 7px 10px;
   border: 1px solid var(--border);
   background: rgba(255, 255, 255, 0.03);
   color: #d6d6d6;
   font-size: 0.72rem;
   font-weight: 600;
+  line-height: 1.35;
 }
 
-.menu-item-tags {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 8px;
-  margin-top: auto;
-  padding-top: 20px;
-}
-
-.menu-item-tags span {
-  color: var(--pink);
-  font-size: 0.72rem;
-  font-weight: 900;
-  letter-spacing: 0.08em;
-}
+/* =========================
+   AZIONI E NOTA FINALE
+   ========================= */
 
 .menu-page-actions {
   display: flex;
@@ -206,11 +243,19 @@
   line-height: 1.6;
 }
 
+/* =========================
+   TABLET
+   ========================= */
+
 @media (max-width: 980px) {
   .menu-item-content {
     padding: 20px;
   }
 }
+
+/* =========================
+   MOBILE
+   ========================= */
 
 @media (max-width: 720px) {
   .menu-page {
@@ -219,9 +264,9 @@
 
   .menu-navigation {
     flex-wrap: nowrap;
-    overflow-x: auto;
     margin-top: 32px;
     padding-bottom: 4px;
+    overflow-x: auto;
   }
 
   .menu-navigation::-webkit-scrollbar {
@@ -243,6 +288,29 @@
 
   .menu-item-image {
     height: 240px;
+  }
+
+  .menu-item-content {
+    min-height: 220px;
+    padding: 21px;
+  }
+
+  .menu-item-heading h3 {
+    font-size: 1.38rem;
+  }
+
+  .menu-item-details {
+    padding-top: 18px;
+  }
+
+  .menu-item-ingredients-list {
+    gap: 7px;
+    margin-top: 14px;
+  }
+
+  .menu-item-ingredients-list li {
+    padding: 6px 9px;
+    font-size: 0.69rem;
   }
 
   .menu-page-actions {

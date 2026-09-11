@@ -7,7 +7,6 @@ type MenuItem = {
   ingredients: string[];
   price: string;
   image?: string;
-  tags?: string[];
 };
 
 type MenuCategory = {
@@ -38,8 +37,7 @@ const menuCategories: MenuCategory[] = [
           'Bun brioche',
         ],
         price: '€ 11,00',
-        image: '/images/burger.jpg',
-        tags: ['BEST SELLER'],
+        image: '/images/classicsmash.jpg',
       },
       {
         name: 'BACON SMASH',
@@ -54,8 +52,7 @@ const menuCategories: MenuCategory[] = [
           'Bun brioche',
         ],
         price: '€ 12,50',
-        image: '/images/burger.jpg',
-        tags: ['BACON LOVERS'],
+        image: '/images/baconsmash.jpg',
       },
       {
         name: 'BBQ SMASH',
@@ -70,8 +67,7 @@ const menuCategories: MenuCategory[] = [
           'Bun brioche',
         ],
         price: '€ 13,00',
-        image: '/images/burger.jpg',
-        tags: ['AFFUMICATO'],
+        image: '/images/bbq burger.jpg',
       },
       {
         name: 'HOT SMASH',
@@ -86,8 +82,7 @@ const menuCategories: MenuCategory[] = [
           'Bun brioche',
         ],
         price: '€ 12,50',
-        image: '/images/burger.jpg',
-        tags: ['PICANTE'],
+        image: '/images/hotsmash.jpg',
       },
       {
         name: 'TRUFFLE SMASH',
@@ -102,8 +97,7 @@ const menuCategories: MenuCategory[] = [
           'Bun brioche',
         ],
         price: '€ 14,00',
-        image: '/images/burger.jpg',
-        tags: ['GOURMET'],
+        image: '/images/trufflesmash.jpg',
       },
       {
         name: 'ITALIAN SMASH',
@@ -118,8 +112,7 @@ const menuCategories: MenuCategory[] = [
           'Bun brioche',
         ],
         price: '€ 13,00',
-        image: '/images/burger.jpg',
-        tags: ['ITALIAN STYLE'],
+        image: '/images/italiansmash.jpg',
       },
     ],
   },
@@ -140,8 +133,7 @@ const menuCategories: MenuCategory[] = [
           'Scorza d’arancia',
         ],
         price: '€ 8,00',
-        image: '/images/cocktail.jpg',
-        tags: ['CLASSICO ITALIANO'],
+        image: '/images/negroni.jpg',
       },
       {
         name: 'MOJITO',
@@ -155,8 +147,7 @@ const menuCategories: MenuCategory[] = [
           'Soda',
         ],
         price: '€ 8,00',
-        image: '/images/cocktail.jpg',
-        tags: ['FRESH'],
+        image: '/images/mojito.jpg',
       },
       {
         name: 'MOSCOW MULE',
@@ -169,8 +160,7 @@ const menuCategories: MenuCategory[] = [
           'Ghiaccio',
         ],
         price: '€ 8,00',
-        image: '/images/cocktail.jpg',
-        tags: ['SPICY & FRESH'],
+        image: '/images/moscowmule.jpg',
       },
       {
         name: 'MARGARITA',
@@ -183,8 +173,7 @@ const menuCategories: MenuCategory[] = [
           'Sale sul bordo',
         ],
         price: '€ 8,50',
-        image: '/images/cocktail.jpg',
-        tags: ['TEQUILA'],
+        image: '/images/margarita.jpg',
       },
       {
         name: 'ESPRESSO MARTINI',
@@ -197,8 +186,7 @@ const menuCategories: MenuCategory[] = [
           'Sciroppo di zucchero',
         ],
         price: '€ 9,00',
-        image: '/images/cocktail.jpg',
-        tags: ['AFTER DINNER'],
+        image: '/images/espressomartini.jpg',
       },
       {
         name: 'GIN TONIC',
@@ -211,8 +199,7 @@ const menuCategories: MenuCategory[] = [
           'Bacche di ginepro',
         ],
         price: '€ 8,00',
-        image: '/images/cocktail.jpg',
-        tags: ['CLASSICO'],
+        image: '/images/gintonic.jpg',
       },
     ],
   },
@@ -235,13 +222,13 @@ function Menu() {
           </p>
         </header>
 
-        <div className="menu-navigation" aria-label="Categorie del menu">
+        <nav className="menu-navigation" aria-label="Categorie del menu">
           {menuCategories.map((category) => (
             <a key={category.id} href={`#${category.id}`}>
               {category.title}
             </a>
           ))}
-        </div>
+        </nav>
 
         {menuCategories.map((category) => (
           <section
@@ -262,7 +249,10 @@ function Menu() {
 
             <div className="menu-items-grid">
               {category.items.map((item) => (
-                <article key={item.name} className="menu-item-card">
+                <article
+                  key={`${category.id}-${item.name}`}
+                  className="menu-item-card"
+                >
                   {item.image && (
                     <img
                       src={item.image}
@@ -280,26 +270,20 @@ function Menu() {
                     </div>
 
                     {item.description && (
-                      <p className="menu-item-description">{item.description}</p>
+                      <p className="menu-item-description">
+                        {item.description}
+                      </p>
                     )}
 
-                    <div className="menu-item-ingredients">
-                      <p>INGREDIENTI</p>
+                    <details className="menu-item-details">
+                      <summary>VEDI INGREDIENTI</summary>
 
-                      <ul>
+                      <ul className="menu-item-ingredients-list">
                         {item.ingredients.map((ingredient) => (
                           <li key={ingredient}>{ingredient}</li>
                         ))}
                       </ul>
-                    </div>
-
-                    {item.tags && item.tags.length > 0 && (
-                      <div className="menu-item-tags">
-                        {item.tags.map((tag) => (
-                          <span key={tag}>{tag}</span>
-                        ))}
-                      </div>
-                    )}
+                    </details>
                   </div>
                 </article>
               ))}
